@@ -16,5 +16,6 @@ public class Car_2 {
         System.out.println(blero.model + " " + blero.year);
         System.out.println(maruti.model + " " + maruti.year);
         System.out.println("Total number of cars created: " + Car_2.numberOfCars);
+    
     }
     }
