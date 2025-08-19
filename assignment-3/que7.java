@@ -6,6 +6,7 @@ public class que7 {
         que7 obj=new que7();
         //The final field que7.year cannot be assignedJava(33554512)
         //obj.year=2027;
+        
     }
     
 }
