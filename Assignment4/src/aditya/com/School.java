@@ -1,0 +1,41 @@
+package aditya.com;
+
+public class School {
+	 static Student[] students = new Student[100];
+	 static int count = 0;
+	 
+	 
+	 // for add the students
+	 public static void addStudent(Student s) {
+	        if (count < students.length) {
+	            students[count] = s;
+	            count++;
+	        } else {
+	            System.out.println("School is full");
+	        }
+	    }
+	 
+	 
+	 
+	 
+	 public static  String topper() {
+		 String name = students[0].Name; 
+		 if(count==0) {
+			 return "their is no student in this school ";
+		 }
+		 double avg=students[0].average();
+		 for(Student s:students) {
+			 if(s==null) {
+				 continue;
+			 }
+			 if(s.average()>avg) {
+				 avg=s.average();
+				 name=s.Name;
+			 }
+			 
+		 }
+		 return name;
+		 
+	 }
+
+}
