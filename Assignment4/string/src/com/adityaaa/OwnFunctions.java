@@ -109,8 +109,57 @@ public class OwnFunctions {
 		return OwnSplit(s," ").length;
 	}
 	
+	public static boolean OwnContainsMethod(String s,String sub) {
+		   int j=0;
+		   for(int i=0;i<s.length();i++) {
+			   if(s.charAt(i)==sub.charAt(j)) {
+				   j++;
+				   if(j==sub.length()) {
+					   return true;
+				   }
+			   }
+			   else {
+				   i=i-j;
+				   j=0;
+			   }
+			   
+		   }
+		   return false;
+		
+	}
+	// find the longst common prefix of a in an array if string ]
+	 public static  String longestCommonPrefix(String[] strs) {
+	        Arrays.sort(strs);
+	        StringBuilder sb =new StringBuilder();
+	        int n=Math.min(strs[0].length(),strs[strs.length-1].length());
+	        for(int i=0;i<n;i++){
+	            if(strs[0].charAt(i)==strs[strs.length-1].charAt(i)){
+	                sb.append(strs[0].charAt(i));
+	            }
+	            else{
+	                break;
+	            }
+
+	        }
+	        return sb.toString();
+	    }
+	 // all premutation of string
+	 
+	 public static String[] Permutaion(String s) {
+		 int n=s.length();
+		 n=(int)Math.pow(2,n);
+		 String[] arr=new String[n];
+		 work(arr,"",s);
+		 return arr;
+	 }
+	 public static void work(String[] arr,String ans,String s) {
+		 int n=s.length();
+		 
+		 
+		 
+	 }
 	
-	
+	 
 	
 
 }
