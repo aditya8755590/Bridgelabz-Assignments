@@ -3,20 +3,42 @@ import java.util.Scanner;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Random;
+import java.util.Arrays;
+
+
+
+//LocalDate.parse(): Converts a string into a LocalDate object.
+//● getDayOfWeek(): Retrieves the day of the week for the given date.
+//ChronoUnit.DAYS.between(): Calculates the difference in days between two dates. 
+//DateTimeFormatter: Formats the date and time into a readable string.
 
 public class Time {
 	public static void main(String[] args) {
-//		Scanner sc=new Scanner(System.in);
-//		System.out.println("Enter a date (dd-MM-yyyy): ");
-//		String dob=sc.nextLine();
-//		System.out.println("[" + dob + "]");
-//		//System.out.print(getDay(dob));
-//		System.out.print(daysBetween(dob));
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a date (dd-MM-yyyy): ");
+		String dob=sc.nextLine();
+		System.out.println("[" + dob + "]");
+		//System.out.print(getDay(dob));
+		System.out.print(daysBetween(dob));
 		
 		System.out.print(displayInFormetedManner());
 		
 		
 		
+		System.out.println("Random Numbers:");
+		BuiltInFunction.generateRandomNumbers();
+		System.out.println("\nMath Operations:");
+		BuiltInFunction.performMathOperations();
+		System.out.println("\nArray Manipulation:");
+		BuiltInFunction.manipulateArray();
+		System.out.println("\nString Manipulation:");
+		BuiltInFunction.manipulateString();
+		BuiltInFunction.print();
+		
+		
+		
+		sc.close();
 		
 	}
 	
@@ -50,9 +72,10 @@ public class Time {
 //		LocalDate date = LocalDate.parse(currentDate.toString(),formatter);
 //		return date;
 //		
-		
+		  // i want to modify 
 		
 	}
+	
 	}
 	
  

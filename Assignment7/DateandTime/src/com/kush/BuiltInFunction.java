@@ -8,14 +8,13 @@ import java.util.Arrays;
 
 public class BuiltInFunction {
 		
-		// for generating rendoms number 
+		// for generating random  number 
 		public static void generateRandomNumbers() {
 			//Random random = new Random();
 			// Using Math.random()
 			double randomDouble = Math.random() * 100;
 			System.out.println("Random double (0-100): " + (int)randomDouble);
 			}
-		
 		
 		
 		public static void performMathOperations() {
@@ -59,5 +58,3 @@ public class BuiltInFunction {
 		
 
 	}
-
-}
