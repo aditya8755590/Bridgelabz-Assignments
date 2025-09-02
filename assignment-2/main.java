@@ -155,14 +155,14 @@ public class main {
     // 2D to 1D array
     public static void twoDToOneDArray() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number of rows: ");
+        System.out.print("Enter number of rows");
         int rows = scanner.nextInt();
-        System.out.print("Enter number of columns: ");
+        System.out.print("Enter number of columns");
         int columns = scanner.nextInt();
         int[][] twoDArray = new int[rows][columns];
         int[] oneDArray = new int[rows * columns];
 
-        System.out.println("Enter elements of 2D array:");
+        System.out.println("Enter elements of 2D array");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 twoDArray[i][j] = scanner.nextInt();
@@ -176,7 +176,7 @@ public class main {
             }
         }
 
-        System.out.println("1D Array:");
+        System.out.println("1D");
         for (int i = 0; i < oneDArray.length; i++) {
             System.out.print(oneDArray[i] + " ");
         }
@@ -186,7 +186,7 @@ public class main {
     // FizzBuzz
     public static void fizzBuzz(int number) {
         if (number < 1) {
-            System.out.println("Error: Please enter a positive integer.");
+            System.out.println("Error");
             return;
         }
         String[] results = new String[number];
@@ -202,7 +202,7 @@ public class main {
             }
         }
 
-        System.out.println("FizzBuzz results:");
+        System.out.println("FizzBuzz");
         for (String result : results) {
             System.out.print(result + " ");
         }
