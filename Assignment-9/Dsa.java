@@ -239,5 +239,22 @@ public class Dsa {
        }
         return ans;
     }
+    
+      public boolean isHappy(int n) {
+        if(n==1||n==7){
+            return true;
+        }
+        if(n<10&&n!=1&&n!=7){
+            return false;
+        }
+        String s=Integer.toString(n);
+        int ans=0;
+        for(int i=0;i<s.length();i++){
+            int num=s.charAt(i)-'0';
+            ans+=Math.pow(num,2);
+
+        }
+        return isHappy(ans);
+    }
 
 }
