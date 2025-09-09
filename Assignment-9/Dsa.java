@@ -256,5 +256,145 @@ public class Dsa {
         }
         return isHappy(ans);
     }
+    public int removeDuplicates(int[] nums) {
+        int count=0;
+        for(int i=0;i<nums.length;i++){
+            if(i<nums.length-1&&nums[i]!=nums[i+1]){
+                nums[count]=nums[i];
+                count++;
+            }
+
+        }
+        nums[count]=nums[nums.length-1];
+        count++;
+        return count;
+    }
+    public int removeElement(int[] nums, int val) {
+        int k = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+        return k;
+    }
+    public int searchInsert(int[] nums, int target) {
+        int i=0,j=nums.length-1;
+        while(i<=j){
+            int mid=i+(j-i)/2;
+            if(nums[mid]==target){
+                return mid;
+            }
+            else if(nums[mid]>=target){
+                j=mid-1;
+            }
+            else{
+                i=mid+1;
+            }
+        }
+        return i;
+    }
+    public int maxProfit(int[] p) {
+        int buy=p[0];
+        int ans=0;
+        for(int i=1;i<p.length;i++){
+            if(p[i]<buy){
+                buy=p[i];
+
+            }
+            ans=Math.max(ans,p[i]-buy);
+        }
+
+        return ans;}
+    public int climbStairs(int n) {
+        if(n==1){
+            return 1;
+        }
+        if(n==2){
+            return 2;
+        }
+        int [] arr=new int [n+1];
+        arr[1]=1;
+        arr[2]=2;
+        for(int i=3;i<=n;i++){
+            arr[i]=arr[i-1]+arr[i-2];
+        }
+        return arr[n];
+    }
+    public int majorityElement(int[] nums) {
+        int ans=nums[0];
+        int freq=1;
+        for(int i=1;i<nums.length;i++){
+            if(freq==0){
+                ans=nums[i];
+            }
+            if(ans==nums[i]) freq++;
+            if(ans!=nums[i]) freq--;
+        }
+        return ans;
+
+    }
+    public int[] twoSum(int[] arr, int target) {
+        int[] ans= new int[2];
+        HashMap<Integer,Integer> map=new HashMap<>();
+        map.put(arr[0],0);
+        for(int i=1;i<arr.length;i++){
+
+            if(map.containsKey(target-arr[i])){
+                ans[0]=map.get(target-arr[i]);
+                ans[1]=i;
+                break;
+
+            }
+            map.put(arr[i],i);
+
+        }
+        return ans;
+    }
+    public List<String> fizzBuzz(int n) {
+        List<String> list =new ArrayList<>();
+        for(int i=1;i<=n;i++){
+            if(i%3==0&&i%5==0){
+                list.add("FizzBuzz");
+
+            }
+            else if(i%3==0){
+                list.add("Fizz");
+            }
+            else if(i%5==0){
+                list.add("Buzz");
+            }
+            else {
+                list.add(Integer.toString(i));
+            }
+        }
+        return list;
+    }
+    public boolean isPowerOfTwo(int n) {
+        if(((n-1)&n)==0 && n>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public String countAndSay(int n) {
+        if(n==1){
+            return "1";
+        }
+        String say=countAndSay(n-1);
+        String result="";
+        for(int i=0;i<say.length();i++){
+            char c=say.charAt(i);
+            int count=1;
+            while(i<say.length()-1&&say.charAt(i)==say.charAt(i+1)){
+                count++;
+                i++;
+            }
+            result+=Integer.toString(count)+Character.toString(c);
+        }
+        return result;
+    }
 
 }
