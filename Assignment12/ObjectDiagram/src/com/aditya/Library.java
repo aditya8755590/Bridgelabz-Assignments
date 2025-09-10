@@ -1,5 +1,5 @@
 package com.aditya;
-
+import java.util.ArrayList;
 public class Library {
 // Problem 1: Library and Books (Aggregation)
 // Description: Create a Library class that contains multiple Book objects. Model the relationship such that a library can have many books, but a book can exist independently (outside of a specific library).
@@ -10,10 +10,15 @@ public class Library {
 // Goal: Understand aggregation by modeling a real-world relationship where the Library aggregates Book objects.
 
 	private ArrayList<Book> books;
-
 	public Library() {
-		books = new ArrayList<>();	
-		
+		books = new ArrayList<>();
 	}
 
+	public void addBook(Book book) {
+		books.add(book);
+	}
+
+	public ArrayList<Book> getBooks() {
+		return books;
+	}
 }
