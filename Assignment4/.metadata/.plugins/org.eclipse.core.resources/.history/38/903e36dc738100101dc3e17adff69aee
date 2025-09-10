@@ -1,0 +1,45 @@
+package com.adityaaa;
+
+public class OwnFunctions {
+	
+	
+	
+	
+	
+	public static  String[] OwnSplit(String s, String by) {
+		
+		StringBuilder sb=new StringBuilder();
+		String[] ans=new String[s.length()];
+		int count=0;
+		
+		for(int i=0;i<s.length();i++) {
+			sb.append(s.charAt(i));
+		    if (sb.length() >= by.length() && sb.substring(sb.length() - by.length()).equals(by)) {
+		            String part = sb.substring(0, sb.length() - by.length());
+		            ans[count++] = part;
+		            sb.setLength(0);
+		        }
+			
+			
+		}
+		 if (sb.length() > 0) {
+		        ans[count++] = sb.toString();
+		    }
+		 String[] ans1=new String[count];
+//		 for(String ss:ans) {
+//			 
+//			 
+//		 }
+		 int n=count;
+		 while(count!=0) {
+			 ans1[n-count]=ans[n-count];
+			 count--;
+		 }
+		 return ans1;
+		
+		
+		
+		
+	}
+
+}

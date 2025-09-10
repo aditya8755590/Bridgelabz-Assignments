@@ -1,0 +1,59 @@
+package com.kush;
+import java.util.Scanner;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+
+public class Time {
+	public static void main(String[] args) {
+//		Scanner sc=new Scanner(System.in);
+//		System.out.println("Enter a date (dd-MM-yyyy): ");
+//		String dob=sc.nextLine();
+//		System.out.println("[" + dob + "]");
+//		//System.out.print(getDay(dob));
+//		System.out.print(daysBetween(dob));
+		
+		System.out.print(displayInFormetedManner());
+		
+		
+		
+		
+	}
+	
+	public static DayOfWeek getDay(String inputeDate) {
+		
+		DateTimeFormatter formatter =DateTimeFormatter.ofPattern("dd-MM-yyyy ");
+		LocalDate date = LocalDate.parse(inputeDate,formatter);
+		return  date.getDayOfWeek();
+		
+		
+	}
+	//Calculates and shows the number of days between the given date and the current date.
+	
+	public static long daysBetween(String inputeDate) {
+		LocalDate currentDate = LocalDate.now();
+		DateTimeFormatter formatter =DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		// String formattedDateTime = currentDate.format(formatter);
+		LocalDate date = LocalDate.parse(inputeDate,formatter);
+		// System.out.print(getDay(formattedDateTime));
+		  LocalDate givenDate = LocalDate.parse(inputeDate, formatter);
+		//LocalDate date = LocalDate.parse(inputeDate,formatter);
+		  // ye function keval localdate object leta hai 
+		return ChronoUnit.DAYS.between(givenDate, currentDate);
+//		
+    }
+	//Displays the current date and time in a formatted manner.
+	public static LocalDate displayInFormetedManner(){
+		LocalDate currentDate = LocalDate.now();
+		DateTimeFormatter formatter =DateTimeFormatter.ofPattern("dd-MM-yyyy");
+//		return formatter;
+		LocalDate date = LocalDate.parse(currentDate.toString(),formatter);
+		return date;
+//		
+		
+		
+	}
+	}
+	
+ 
+

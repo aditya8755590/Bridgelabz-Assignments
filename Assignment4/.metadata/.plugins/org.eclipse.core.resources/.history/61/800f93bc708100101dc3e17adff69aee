@@ -1,0 +1,10 @@
+package com.adityaaa;
+
+public class OwnFunctions {
+	public static  string OwnSplit(String s) {
+		StringBuilder sb=new StringBuilder();
+		
+		
+	}
+
+}

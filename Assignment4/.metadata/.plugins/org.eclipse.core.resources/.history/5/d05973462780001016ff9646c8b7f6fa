@@ -1,0 +1,5 @@
+package librarytomanagebooks;
+
+public class Book {
+
+}

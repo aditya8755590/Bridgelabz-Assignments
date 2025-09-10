@@ -1,0 +1,70 @@
+package question34;
+
+public class Inventory {
+
+	 static Item[] items = new Item[100];  // static array to store items
+	    static int count = 0; // track how many items are added
+
+	    // add item
+	    public static void addItem(Item i) {
+	        if (count < items.length) {
+	            items[count] = i;
+	            count++;
+	        } else {
+	            System.out.println("Inventory is full");
+	        }
+	    }
+
+	    // search by name (case insensitive)
+	    public static void searchByName(String name) {
+	        boolean found = false;
+	        for (Item i : items) {
+	            if (i != null && i.ItemName.equalsIgnoreCase(name)) {
+	                System.out.println("Found Item: " + i.ItemCode + " " + i.ItemName +
+	                        " Qty=" + i.Quantity + " Price=" + i.PricePerUnit);
+	                found = true;
+	            }
+	        }
+	        if (!found) {
+	            System.out.println("Item not found");
+	        }
+	    }
+
+	    // update stock
+	    public static void updateStock(String name, int newQty) {
+	        for (Item i : items) {
+	            if (i != null && i.ItemName.equalsIgnoreCase(name)) {
+	                i.Quantity = newQty;
+	                System.out.println("Stock updated for " + name + " new qty=" + newQty);
+	                return;
+	            }
+	        }
+	        System.out.println("Item not found to update");
+	    }
+
+	    // calculate total value
+	    public static double totalValue() {
+	        double sum = 0;
+	        for (Item i : items) {
+	            if (i != null) {
+	                sum += i.Quantity * i.PricePerUnit;
+	            }
+	        }
+	        return sum;
+	    }
+
+	    // sort by quantity (ascending)
+	    public static void sortByQuantity() {
+	        Arrays.sort(items, 0, count, (a, b) -> a.Quantity - b.Quantity);
+	        System.out.println("Items sorted by quantity");
+	    }
+
+	    // display all items
+	    public static void displayAll() {
+	        for (Item i : items) {
+	            if (i != null) {
+	                System.out.println(i.ItemCode + " " + i.ItemName + " Qty=" + i.Quantity + " Price=" + i.PricePerUnit);
+	            }
+	        }
+	    }
+}
