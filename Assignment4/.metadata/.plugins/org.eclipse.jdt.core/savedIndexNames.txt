@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+/Users/adityakumar/eclipse-workspace/Bridgelabz assignment-local/Bridgelabz-Assignments/Assignment4/.metadata/.plugins/org.eclipse.jdt.core
-3179885250.index
-1865797976.index
-2347074817.index
