@@ -7,7 +7,6 @@ class BankAtm extends Atm implements TransactionLogger {
 
 	private List<Transaction> transactions = new ArrayList<>();
 
-
     @Override
     public void withdraw(Account account, double amount) {
         boolean success = false;

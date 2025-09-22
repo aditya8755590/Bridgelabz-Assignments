@@ -20,6 +20,7 @@ public class Transaction {
 	    // in this we override the class of object
 	    
 	    @Override
+		// ye object class ke to string ko override kr rah hai 
 	    public String toString() {
 	        return "TxnID" + transactionId + " | " + type + " | Amount" + amount +" | Current Balance "+balanceAfterTransation+ " | Date" + date;
 	    }
